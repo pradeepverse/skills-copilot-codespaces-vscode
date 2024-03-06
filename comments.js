@@ -1,19 +1,14 @@
-// create web server
-// create a router
-// create a route
-// create a response
-// send the response
-
+// create a web server
+// load the http module
 var http = require('http');
-var express = require('express');
-var app = express();
 
-var http = require('http');
-var server = http.createServer(function(req, res){
-  res.writeHead(200, {'Content-Type': 'text/plain'});
-  res.end('Hello, world!');
+// configure the server to respond with a Hello World message
+var server = http.createServer(function (request, response) {
+  response.writeHead(200, {"Content-Type": "text/plain"});
+  response.end("Hello World\n");
 });
 
-server.listen(3000, function(){
-  console.log('Server is running on port 3000');
-});
+// listen for incoming requests on port 8080
+server.listen(8080);
+
+console.log('Server running at http://localhost:8080/');
